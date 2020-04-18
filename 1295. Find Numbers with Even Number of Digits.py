@@ -1,4 +1,9 @@
 import math
+
+# ===== Problem Statement =====
+# Given an array nums of integers,
+# return how many of them contain an even number of digits.
+
 # THINK:
 # We can use math.log10 to determine the
 # length of an integer. Idea is that 10^n
@@ -9,6 +14,8 @@ import math
 # Therefore, to convert [digit_len-1].something
 # to digit_len, we'd need to add 1 to it and
 # cast it to int.
+
+
 
 class Solution:
 

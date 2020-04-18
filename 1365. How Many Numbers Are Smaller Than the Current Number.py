@@ -1,4 +1,4 @@
-# Problem
+# ===== Problem Statement =====
 # Given the array nums, for each nums[i] find out
 # how many numbers in the array are smaller than it.
 # That is, for each nums[i] you have to count the number
@@ -10,6 +10,8 @@
 
 class Solution:
 
+    # Runtime: 280 ms
+    # Memory: 14.1 MB
     def smallerNumbersThanCurrentBrute(self, nums):
         result = []
         for i in nums:
@@ -24,6 +26,8 @@ class Solution:
         return result
 
 
+    # Runtime: 56 ms
+    # Memory: 14 MB
     def smallerNumbersThanCurrent(self, nums):
         nums_s = sorted(nums)
         result = []
