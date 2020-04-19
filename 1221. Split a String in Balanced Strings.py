@@ -21,6 +21,8 @@
 
 class Solution:
 
+    # Runtime: 36 ms
+    # Memory: 13.9 MB
     def balancedStringSplit(self, s: str) -> int:
         # Let the empty string indicate a transition
         # between balanced string cases.
