@@ -34,7 +34,7 @@ class Solution:
         if all(e >= 0 for e in nums):
             # Only positive and 0
             small, big = min(nums), max(nums)
-            roi = list(range(small, big+1))
+            roi = list(range(small, big+1))  # Causes MemoryError!
             if 1 not in roi:
                 return 1
             non_occur = [e for e in roi if e not in nums]
@@ -45,7 +45,7 @@ class Solution:
             # There's a mix of pos and neg. Get rid of negatives.
             pos = [e for e in nums if e > 0]  # Don't care about 0
             small, big = min(pos), max(pos)
-            roi = list(range(small, big+1))
+            roi = list(range(small, big+1))  # Causes MemoryError!
             if 1 not in roi:
                 return 1
             non_occur = [e for e in roi if e not in pos]
@@ -54,7 +54,7 @@ class Solution:
             return big+1
 
 
-    # NOTE: attempt3 is attempt but refactored
+    # NOTE: attempt3 is attempt4 but refactored
     # Correctness seems OK, but performance is not
     # (results in a MemoryError due to construction of roi)
     def attempt3(self, nums: List[int]) -> int:
@@ -67,7 +67,7 @@ class Solution:
             nums = [e for e in nums if e > 0]  # Don't care about 0
 
         small, big = min(nums), max(nums)
-        roi = list(range(small, big+1))
+        roi = list(range(small, big+1))  # Causes MemoryError!
         if 1 not in roi:
             return 1
         non_occur = [e for e in roi if e not in nums]
@@ -83,7 +83,12 @@ class Solution:
     def attempt4(self, nums: List[int]) -> int:
         # How MemoryError was avoided:
         #  Loop through (min, max) from a range instead
-        #  of building a big ol' list from it!!
+        #  of building a big ol' list from it (roi)!!
+        # - Using list comprehensions is what drove you
+        #   to make roi. This makes you think how list
+        #   comprehensions might not always be the best
+        #   approach when you need to take space into
+        #   consideration.
         if nums:
             if all(e <= 0 for e in nums):
                 return 1
