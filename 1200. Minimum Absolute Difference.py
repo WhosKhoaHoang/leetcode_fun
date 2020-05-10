@@ -84,7 +84,7 @@ class Solution:
             abs_diff = arr[i+1] - arr[i]
             #diffs_d[(arr[i], arr[i+1])] = abs_diff
             if abs_diff < min_diff:
-                # Reset result to the pair with the smallest diff!
+                # RESET result to the pair with the smallest diff!
                 result = [[arr[i], arr[i+1]]]
                 min_diff = abs_diff
             elif abs_diff == min_diff:

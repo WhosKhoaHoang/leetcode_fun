@@ -5,7 +5,7 @@ from typing import List
 # amongst an array of strings.
 # If there is no common prefix, return an empty string "".
 
-# TODO: Especially consider playing around with this solution a bit more
+# TODO: Consider playing around with this solution a bit more
 
 
 class Solution:
